@@ -13,7 +13,7 @@ client.on('message', msg => {
 
   // The command 'nm status' causes the bot to say 'Online!'
   if (msg.content === `${prefix}status`) {
-    msg.channel.send('Online!');
+    msg.channel.send('Online! :robot:');
   }
 
 });
