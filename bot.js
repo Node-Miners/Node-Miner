@@ -16,6 +16,9 @@ client.on('message', msg => {
     msg.channel.send('Online! :robot:');
   }
 
+  // The command 'nm calc' followed by calculation causes the bot
+  // to return result of calculation.
+
 });
 
 
