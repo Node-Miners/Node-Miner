@@ -1,8 +1,13 @@
 // Run dotenv
 
 const Discord = require('discord.js'); // creates an instance of discord.js
+require('dotenv-flow').envtoken(); // creates an instance of dotenv-flow for token use
 const client = new Discord.Client();
-const { prefix, token } = require("./config.json");
+const { prefix } = require("./config.json");
+
+const envtoken = {
+  token: proccess.env.TOKEN
+};
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -21,4 +26,4 @@ client.on('message', msg => {
 
 
 
-client.login(token);
+client.login(envtoken.token);
