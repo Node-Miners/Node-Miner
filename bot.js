@@ -18,6 +18,7 @@ client.on('message', msg => {
 // The command 'nm' followed by a calculation returns an answer
 // to the user.
 // calculation cannot have spaces. Only one space after 'nm'
+// Example 'nm 2+2' will return '4'.
   if (msg.content.includes(`${prefix}`) && msg.content.includes('+' || '-'
       || '*' || '^')) {
     var content = msg.content
