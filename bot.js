@@ -18,20 +18,13 @@ client.on('message', msg => {
 // The command 'nm' followed by a calculation returns an answer
 // to the user.
 // calculation cannot have spaces. Only one space after 'nm'
-// Example 'nm 2+2' will return '4'.
-  var content = msg.content
-  var spaceCount = (content.split(' ').length - 1)
-  if (spaceCount > 1) {
-  msg.channel.send('Calculation not possible.\n' +
-                  'Please re-enter calculation.\n' +
-                  'Make sure calculation is formatted ' +
-                  'properly.\n' + 'Example: nm 2+2')
-  }
-  else if (msg.content.includes(`${prefix}`) && msg.content.includes('+' || '-'
+// Example 'nm 2+2' will return '4'.  
+  if (msg.content.includes(`${prefix}`) && msg.content.includes('+' || '-'
       || '*' || '^')) {
-    var parts = content.split(' ', 2)
-    var problem = parts[1]
-    var answer = eval(problem)
+    let content = msg.content
+    let parts = content.split(' ', 2)
+    let problem = parts[1]
+    let answer = eval(problem)
     msg.channel.send(answer);
     }
 }
