@@ -1,6 +1,6 @@
 # Node-Miner
 
-##Token
+## Token
 
 to be able to use this you will need to create a file called `.env` in the `/app` folder
 
