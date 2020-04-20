@@ -1,12 +1,12 @@
 FROM ubuntu:18.04
 
-RUN apt update && upgrade -y
+RUN apt update
 
-RUN apt install curl
+RUN apt install curl sudo -y 
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 
-RUN apt install nodejs
+RUN apt install nodejs -y
 
 RUN npm i discord.js
 RUN npm i dotenv-flow
