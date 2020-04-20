@@ -2,6 +2,8 @@ FROM ubuntu:18.04
 
 RUN apt update
 
+RUN apt upgrade -y
+
 RUN apt install curl sudo -y 
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
