@@ -17,17 +17,16 @@ client.on('message', msg => {
   }
 // The command 'nm' followed by a calculation returns an answer
 // to the user.
-// calculation cannot have spaces. Only one space after 'nm'
-// Example 'nm 2+2' will return '4'.  
-  if (msg.content.includes(`${prefix}`) && msg.content.includes('+' || '-'
-      || '*' || '^')) {
-    let content = msg.content
-    let parts = content.split(' ', 2)
-    let problem = parts[1]
-    let answer = eval(problem)
-    msg.channel.send(answer);
+// Use of regex searches for individual symbols to determine whether it is
+// a maths expresion.
+let tempMsg = msg.content
+let characters = /[\+\*-\/]/;
+  if (tempMsg.startsWith('nm') && characters.exec(tempMsg) !== null) {
+      let parts = tempMsg.split(' ', 2)
+      let problem = parts[1]
+      let answer = eval(problem)
+      msg.channel.send(answer);
     }
-}
 
 });
 
