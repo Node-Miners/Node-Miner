@@ -17,28 +17,21 @@ client.on('message', msg => {
     msg.channel.send('Online! :robot:');
   }
 
-//client.on('message', message => {
-        //var input = message.content.toUpperCase();
-        if (input === 'NM TIMER 20MINS')
-
-    {
-        message.reply("20 min timer set");
-        setTimeout(function(){
-            message.reply("15 mins remaining")}, 300000);
-
-        setTimeout(function(){
-            message.reply("10 mins remaining")}, 600000);
-
-        setTimeout(function(){
-            message.reply("5 mins remaining")}, 900000);
-
-        setTimeout(function(){
-            message.reply(" 20 mins is up. Timer ended ")}, 1200000);
-
-    }
-
-
-
+        if (msg.content ===  `${prefix}poma 20mins`) {
+            msg.channel.send("20 min timer set");
+            
+            setTimeout(function(){
+              msg.channel.send("15 mins remaining")}, 300000);
+          
+            setTimeout(function(){
+              msg.channel.send("10 mins remaining")}, 600000);
+          
+            setTimeout(function(){
+              msg.channel.send("5 mins remaining")}, 900000);
+          
+            setTimeout(function(){
+              msg.channel.send(" 20 mins is up. Timer ended ")}, 1200000);
+          }
 
 });
 
