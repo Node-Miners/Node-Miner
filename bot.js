@@ -5,9 +5,6 @@ require('dotenv-flow').config(); // creates an instance of dotenv-flow for token
 const client = new Discord.Client();
 const { prefix } = require("./config.json");
 
-const userId = mention.replace(/<@(.*?)>/, (match, group1) => group1);
-const member = guild.members.get(userId);
-
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
@@ -21,7 +18,7 @@ client.on('message', msg => {
   }
 
         if (msg.content ===  `${prefix}poma 20mins`) {
-            msg.channel.send(`${mention}20 min timer set`);
+            msg.channel.send(`${message.author} 20 min timer set`);
             
             setTimeout(function(){
               msg.channel.send("15 mins remaining")}, 300000);
