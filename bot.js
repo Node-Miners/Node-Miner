@@ -18,7 +18,7 @@ client.on('message', msg => {
   }
 
         if (msg.content ===  `${prefix}poma 20mins`) {
-            msg.channel.send("20 min timer set");
+            msg.channel.send(`20 min timer set`);
             
             setTimeout(function(){
               msg.channel.send("15 mins remaining")}, 300000);
