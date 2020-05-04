@@ -27,7 +27,8 @@ let characters = /[\+\*-\/]/;
   if (tempMsg.startsWith('nm') && characters.exec(tempMsg) !== null) {
       let parts = tempMsg.split(' ', 2)
       let problem = parts[1]
-
+  }
+  
   if (msg.content.startsWith(`${prefix}calc`)) {
       let parts = msg.content.split(' ', 3)
       let problem = parts[2]
