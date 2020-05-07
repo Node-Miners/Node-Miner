@@ -28,10 +28,11 @@ client.on('message', msg => {
       msg.channel.send(answer);
     }
 
-    let minutesToTime = '';
+
         function delayText(milliseconds){
         }
             if (msg.content.startsWith('${prefix} TIMER')){
+                let minutesToTime = '';
                 // to split the input and get the varible to use in calculations
                 let timerParts = message.content.split(' ',3)
                 minutesToTime = timerParts[2]
@@ -41,18 +42,21 @@ client.on('message', msg => {
                 //This converts overall timer time to milliseconds
                 msForTimer = 60000*minutesToTime;
 
-                    //this is to make the timer countdown - not working yet
-                    while (minutesToTime > 0) { //this does not yet countdown
-                            minsRemaining = (minutesToTime - 1)*60000
-                        //setTimeout(function(){
-                         //msg.reply(minsRemaining)}, (minsRemaining));
-                            minutesToTime = minutesToTime - 1;
-                    }
-                    //message displays after timer finished
-                    if (minutesToTime === 0 )
-                        setTimeout(function(){
-                        msg.reply('**Timer ended**')}, (msForTimer));
+                while (minutesToTime > 1) { //this does not yet countdown
+                      minsRemaining = (minutesToTime - 1)
+                      msRemaining = (minutesToTime - 1)*60000
+                      setTimeout(function(){
+                      msg.reply(minsRemaining)}, (msRemaining));//can not get minsRemaining to display anything but 1
+                      minutesToTime = minutesToTime - 1;
+              }
 
+              if  (minutesToTime === 1 )
+                  minutesToTime = minutesToTime - 1;
+
+                  //message displays after timer finished
+              if (minutesToTime === 0 )
+                  setTimeout(function(){
+                  msg.reply('**Timer ended**')}, (msForTimer));
 
                 }
 
