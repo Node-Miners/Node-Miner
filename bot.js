@@ -42,7 +42,15 @@ client.on('message', msg => {
                 //This converts overall timer time to milliseconds
                 msForTimer = 60000*minutesToTime;
 
-                while (minutesToTime > 1) { //this does not yet countdown
+                while (minutesToTime > 9 ) { //change so timer countdown every 5 mins
+                  minsRemaining = (minutesToTime - 5)
+                  msRemaining = (minutesToTime - 5)*60000
+                  setTimeout(function(){
+                    msg.reply(minsRemaining)}, (msRemaining));//can not get minsRemaining to display anything but 1
+                    minutesToTime = minutesToTime - 5;
+                  }
+
+          while (minutesToTime > 1 && minutesToTime <5) {
                       minsRemaining = (minutesToTime - 1)
                       msRemaining = (minutesToTime - 1)*60000
                       setTimeout(function(){
