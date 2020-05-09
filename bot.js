@@ -17,21 +17,40 @@ client.on('message', msg => {
     msg.channel.send('Online! :robot:');
   }
 
-  if (msg.content ===  `${prefix}poma 20mins`) {
-    msg.channel.send(`20 min timer set`);
-    
-    setTimeout(function(){
-      msg.channel.send("15 mins remaining")}, 300000);
   
-    setTimeout(function(){
-      msg.channel.send("10 mins remaining")}, 600000);
-  
-    setTimeout(function(){
-      msg.channel.send("5 mins remaining")}, 900000);
-  
-    setTimeout(function(){
-      msg.channel.send(" 20 mins is up. Timer ended ")}, 1200000);
-  }
+// need to make repeat 4 times
+                if (msg.content.startsWith('${prefix} POM')){
+                    // to split the input and get the varible to use in calculations
+                    let pomMinutes = '';
+                    let pomParts = msg.content.split(' ',4)
+                    pomMinutesStudy = pomParts[2]
+                    pomMinutesBreak = pomParts [3]
+                    msg.reply('Pomodoro set for  ' + (pomMinutesStudy) +' minutes of study and ' +(pomMinutesBreak) +' minutes break' );
+
+                    msForPomStudy = 60000*pomMinutesStudy;
+                    msForPomBreak = 60000*pomMinutesBreak;
+                      while (pomMinutesStudy > 1 ) {
+                            pomMinutesStudy = pomMinutesStudy - 1;
+                                if ( pomMinutesStudy % 5 === 0) {
+                                    msPomRemaining = msForPomStudy -((pomMinutesStudy)*60000)
+                                    setTimeout(function(){
+                                msg.reply((pomMinutesStudy) +' minutes of study remaining')}, (msPomRemaining));//can not get minsRemaining to display anything but 1
+                                }
+                                    }
+
+                        if  (pomMinutesStudy === 1 ) {
+                            pomMinutesStudy = pomMinutesStudy - 1;
+                        }
+
+                        if (pomMinutesStudy === 0 )
+                            setTimeout(function(){
+                            msg.reply('**Time for a break**')}, (msForPomStudy));
+                            setInterval(function(){ msg.reply("Break time over in 1 minute")}, (msForPomBreak+msForPomStudy - 60000));
+                            setInterval(function(){ msg.reply("Break time over")}, (msForPomBreak+msForPomStudy));
+                        }
+
+
+
 
 });
 
