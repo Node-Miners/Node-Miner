@@ -29,18 +29,18 @@ client.on('message', msg => {
 
                     msForPomStudy = 60000*pomMinutesStudy;
                     msForPomBreak = 60000*pomMinutesBreak;
-                      while (pomMinutesStudy > 1 ) {
-                            pomMinutesStudy = pomMinutesStudy - 1;
-                                if ( pomMinutesStudy % 5 === 0) {
-                                    msPomRemaining = msForPomStudy -((pomMinutesStudy)*60000)
-                                    setTimeout(function(){
-                                msg.reply((pomMinutesStudy) +' minutes of study remaining')}, (msPomRemaining));//can not get minsRemaining to display anything but 1
-                                }
+                    //    while (pomMinutesStudy > 1 ) {
+                    //     pomMinutesStudy = pomMinutesStudy - 1;
+                    //                  }
+                            
+                                    if ( pomMinutesStudy % 5 === 0) {
+                                        msPomRemaining = msForPomStudy -((pomMinutesStudy)*60000)
+                                        setTimeout(function(){
+                                    msg.reply((pomMinutesStudy) +' minutes of study remaining')}, (msPomRemaining));//can not get minsRemaining to display anything but 1
                                     }
-
-                        if  (pomMinutesStudy === 1 ) {
-                            pomMinutesStudy = pomMinutesStudy - 1;
-                        }
+                        //  if  (pomMinutesStudy === 1 ) {
+                        //      pomMinutesStudy = pomMinutesStudy - 1;
+                        //  }
 
                         if (pomMinutesStudy === 0 )
                             setTimeout(function(){
