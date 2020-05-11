@@ -19,7 +19,7 @@ client.on('message', msg => {
 
   
 // need to make repeat 4 times
-                if (msg.content.startsWith('${prefix} POM')){
+                if (msg.content.startsWith(`${prefix}poma`)){
                     // to split the input and get the varible to use in calculations
                     let pomMinutes = '';
                     let pomParts = msg.content.split(' ',4)
