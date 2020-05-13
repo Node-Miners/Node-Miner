@@ -40,4 +40,4 @@ if (msg.content.startsWith('set reminder')){
 });
 
 
-bot.login("Njk4MTI0NDEwOTUwOTA5OTgz.XrkAnQ.Gwn_4y1xVQKzjW_z2ap40UEHW0g");
+bot.login("");
