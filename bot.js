@@ -56,7 +56,7 @@ client.on('message', msg => {
                             setTimeout(function(){ msg.reply("Break time over in 1 minute")}, (msForPomBreak+msForPomStudy - 60000));
                             setTimeout(function(){ msg.reply("Break time over")}, (msForPomBreak+msForPomStudy));
 
-                        }
+              }
                             
 });
 
