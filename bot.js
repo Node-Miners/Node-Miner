@@ -32,31 +32,23 @@ client.on('message', msg => {
                        while (pomMinutesStudy > 1 ) {
                          pomMinutesStudy = (pomMinutesStudy - 1);
                          msPomRemaining = msForPomStudy -((pomMinutesStudy)*60000)
-                      //   if ( pomMinutesStudy % 5 === 0) {
-                          // msPomRemaining = msForPomStudy -((pomMinutesStudy)*60000)
-                      //      pomStudy = (msForPomStudy -(msPomRemaining))/60000
-                      //     setTimeout(function(){
-                      // msg.reply((pomMinutesStudy) +' minutes of study remaining')}, (msPomRemaining));//can not get minsRemaining to display anything but 1
-                      // setTimeout(function(){
-                      // msg.reply((pomStudy) +' minutes of study have passed')}, (msPomRemaining));//can not get minsRemaining to display anyth
-                      // }
 
                       if ( pomMinutesStudy === 5 ) {
                         setTimeout(function(){ msg.reply('5 minutes remaining Till break')}, (msPomRemaining));      
-                     } 
-                     if ( pomMinutesStudy === 10) {
+                       } 
+                      if ( pomMinutesStudy === 10) {
                         setTimeout(function(){ msg.reply('10 minutes remaining Till break')}, (msPomRemaining));      
-                     } 
-                     if ( pomMinutesStudy === 15) {
-                      setTimeout(function(){ msg.reply('15 minutes remaining Till break')}, (msPomRemaining));      
-                   } 
-                   if ( pomMinutesStudy === 30) {
-                    setTimeout(function(){ msg.reply('30 minutes remaining Till break')}, (msPomRemaining));      
-                 } 
-                 if ( pomMinutesStudy === 45) {
-                  setTimeout(function(){ msg.reply('45 minutes remaining Till break')}, (msPomRemaining));      
-               } 
-                      }
+                      } 
+                      if ( pomMinutesStudy === 15) {
+                        setTimeout(function(){ msg.reply('15 minutes remaining Till break')}, (msPomRemaining));      
+                      } 
+                      if ( pomMinutesStudy === 30) {
+                        setTimeout(function(){ msg.reply('30 minutes remaining Till break')}, (msPomRemaining));      
+                      } 
+                      if ( pomMinutesStudy === 45) {
+                        setTimeout(function(){ msg.reply('45 minutes remaining Till break')}, (msPomRemaining));      
+                      } 
+                    }
 
                       
                             setTimeout(function(){
