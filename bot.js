@@ -47,6 +47,15 @@ client.on('message', msg => {
                      if ( pomMinutesStudy === 10) {
                         setTimeout(function(){ msg.reply('10 minutes remaining Till break')}, (msPomRemaining));      
                      } 
+                     if ( pomMinutesStudy === 15) {
+                      setTimeout(function(){ msg.reply('15 minutes remaining Till break')}, (msPomRemaining));      
+                   } 
+                   if ( pomMinutesStudy === 30) {
+                    setTimeout(function(){ msg.reply('30 minutes remaining Till break')}, (msPomRemaining));      
+                 } 
+                 if ( pomMinutesStudy === 45) {
+                  setTimeout(function(){ msg.reply('45 minutes remaining Till break')}, (msPomRemaining));      
+               } 
                       }
 
                       
