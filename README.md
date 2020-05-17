@@ -8,6 +8,8 @@ Nodejs minimum version 12
 
 `npm install discord.js`
 `npm install dotenv-flow`
+`npm install jquery`
+`npm install jsdom`
 
 
 ## Token 
