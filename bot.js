@@ -58,6 +58,35 @@ client.on('message', msg => {
 
     })
   }
+
+  if (msg.content.startsWith(`${prefix}wiki`)) {
+    let query = msg.content.slice(8, msg.content.length)
+    console.log(query)
+    query += ' wikipedia'
+
+    let url = `http://api.serpstack.com/search?access_key=${process.env.SERP_API_KEY}&type=web&query=${query}`
+    console.log(url)
+
+    let output = ''
+
+    $.get(url, function (data) {
+
+      // prints some info about the request to the API
+      console.log(data.request)
+
+      for (i = 0; i < 5; i++) {
+        if (data.organic_results[i].url.includes('wikipedia.org')) {
+          output = '>>> ' + data.organic_results[i].title + '\n' + data.organic_results[i].url
+          break
+        } else {
+          output = 'Could not find relevant article'
+        }
+      }
+
+      msg.channel.send(output)
+
+    })
+  }
 });
 
 
