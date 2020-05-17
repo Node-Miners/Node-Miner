@@ -1,6 +1,13 @@
 // Run dotenv
 
 const Discord = require('discord.js'); // creates an instance of discord.js
+
+// jQuery is used to handle the search data, and jsdom makes jquery usable outside of a web browser.
+const { JSDOM } = require( 'jsdom' )
+const { window } = new JSDOM("")
+const $ = require( 'jquery' )( window )
+const SEARCH_KEY = process.env.SERP_API_KEY
+
 require('dotenv-flow').config(); // creates an instance of dotenv-flow for token use
 const client = new Discord.Client();
 const { prefix } = require("./config.json");
