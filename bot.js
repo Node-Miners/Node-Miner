@@ -34,19 +34,19 @@ client.on('message', msg => {
                          msPomRemaining = msForPomStudy -((pomMinutesStudy)*60000)
 
                       if ( pomMinutesStudy === 5 ) {
-                        setTimeout(function(){ msg.reply('5 minutes remaining Till break')}, (msPomRemaining));      
+                        setTimeout(function(){ msg.reply('5 minutes remaining till break')}, (msPomRemaining));      
                        } 
                       if ( pomMinutesStudy === 10) {
-                        setTimeout(function(){ msg.reply('10 minutes remaining Till break')}, (msPomRemaining));      
+                        setTimeout(function(){ msg.reply('10 minutes remaining till break')}, (msPomRemaining));      
                       } 
                       if ( pomMinutesStudy === 15) {
-                        setTimeout(function(){ msg.reply('15 minutes remaining Till break')}, (msPomRemaining));      
+                        setTimeout(function(){ msg.reply('15 minutes remaining till break')}, (msPomRemaining));      
                       } 
                       if ( pomMinutesStudy === 30) {
-                        setTimeout(function(){ msg.reply('30 minutes remaining Till break')}, (msPomRemaining));      
+                        setTimeout(function(){ msg.reply('30 minutes remaining till break')}, (msPomRemaining));      
                       } 
                       if ( pomMinutesStudy === 45) {
-                        setTimeout(function(){ msg.reply('45 minutes remaining Till break')}, (msPomRemaining));      
+                        setTimeout(function(){ msg.reply('45 minutes remaining till break')}, (msPomRemaining));      
                       } 
                     }
 
