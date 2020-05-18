@@ -29,12 +29,14 @@ client.on('message', msg => {
 
                     msForPomStudy = 60000*pomMinutesStudy;
                     msForPomBreak = 60000*pomMinutesBreak;
+
+                    
                        while (pomMinutesStudy > 1 ) {
                          pomMinutesStudy = (pomMinutesStudy - 1);
                          msPomRemaining = msForPomStudy -((pomMinutesStudy)*60000)
 
                       if ( pomMinutesStudy === 5 ) {
-                        setTimeout(function(){ msg.reply('5 minutes remaining till break')}, (msPomRemaining));      
+                          setTimeout(function(){ msg.reply('5 minutes remaining till break')}, (msPomRemaining));      
                        } 
                       if ( pomMinutesStudy === 10) {
                         setTimeout(function(){ msg.reply('10 minutes remaining till break')}, (msPomRemaining));      
@@ -49,7 +51,6 @@ client.on('message', msg => {
                         setTimeout(function(){ msg.reply('45 minutes remaining till break')}, (msPomRemaining));      
                       } 
                     }
-
                       
                             setTimeout(function(){
                             msg.reply('**Time for a break**')}, (msForPomStudy));
