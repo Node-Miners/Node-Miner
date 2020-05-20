@@ -11,12 +11,14 @@ client.once('ready', () => {
 
 // Event listener when a user sends a message in the chat
 client.on('message', msg => {
+//*LK* need to ender code here to convert input to uppercase or lowercase so
+//input does not need to be case sensitive
 
   // The command 'nm status' causes the bot to say 'Online!'
   if (msg.content === `${prefix}status`) {
     msg.channel.send('Online! :robot:');
   }
- 
+
 // The command 'nm calc' followed by a calculation returns an answer
 // to the user.
   if (msg.content.startsWith(`${prefix}calc`)) {
@@ -25,7 +27,7 @@ client.on('message', msg => {
       let answer = eval(problem)
       msg.channel.send(answer);
     }
-    
+ 
 let date = '';
 let time = '';
 let details = '';
@@ -54,6 +56,7 @@ if (msg.content.startsWith('set reminder')){
   setInterval(checkTime, 1000);
   msg.channel.send('reminder set');
 }
+
 });
 
 
