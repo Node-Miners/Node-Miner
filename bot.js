@@ -9,6 +9,10 @@ client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
+let date = '';
+let time = '';
+let details = '';
+
 // Event listener when a user sends a message in the chat
 client.on('message', msg => {
     var input = msg.content.toLowerCase();
@@ -26,10 +30,6 @@ client.on('message', msg => {
       let answer = eval(problem)
       msg.channel.send(answer);
     }
- 
-let date = '';
-let time = '';
-let details = '';
 
 function checkTime(){
 let d = new Date();
