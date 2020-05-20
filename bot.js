@@ -11,8 +11,7 @@ client.once('ready', () => {
 
 // Event listener when a user sends a message in the chat
 client.on('message', msg => {
-//*LK* need to ender code here to convert input to uppercase or lowercase so
-//input does not need to be case sensitive
+    var input = msg.content.toLowerCase();
 
   // The command 'nm status' causes the bot to say 'Online!'
   if (msg.content === `${prefix}status`) {
