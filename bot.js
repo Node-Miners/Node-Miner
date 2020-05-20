@@ -36,12 +36,12 @@ let d = new Date();
 let lDate = d.toLocaleDateString();
 let lTime = d.toLocaleTimeString();
 if (lDate === date && lTime === time){
-msg.channel.send(details); }
+msg.reply(details); }
  }
 
 
 if (msg.content === `${prefix}reminder`){
-  msg.channel.send('Please enter reminder details in the following\n' + 'format:\n'
+  msg.reply('Please enter reminder details in the following\n' + 'format:\n'
 + 'set reminder,dd/mm/yyyy,hh:mm:ss am/pm,details\n'
 + 'No 0 in time for single hour time')
 }
@@ -53,7 +53,7 @@ if (msg.content.startsWith('set reminder')){
   time = reminderParts[2];
   details = reminderParts[3];
   setInterval(checkTime, 1000);
-  msg.channel.send('reminder set');
+  msg.reply('Reminder has been set');
 }
 
         function delayText(milliseconds){
