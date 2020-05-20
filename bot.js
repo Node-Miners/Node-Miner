@@ -41,7 +41,7 @@ msg.channel.send(details); }
  }
 
 
-if (msg.content === 'nm reminder'){
+if (msg.content === `${prefix}reminder`){
   msg.channel.send('Please enter reminder details in the following\n' + 'format:\n'
 + 'set reminder,dd/mm/yyyy,hh:mm:ss am/pm,details\n'
 + 'No 0 in time for single hour time')
@@ -56,6 +56,50 @@ if (msg.content.startsWith('set reminder')){
   setInterval(checkTime, 1000);
   msg.channel.send('reminder set');
 }
+
+        function delayText(milliseconds){
+        }
+        if (msg.content.startsWith(`${prefix}timer`)){
+            // to split the input and get the varible to use in calculations
+            let minutesToTime = '';
+            let timerParts = msg.content.split(' ',3)
+            minutesToTime = timerParts[2]
+            msg.reply('Timer set for ' + (minutesToTime) +' minutes' );
+
+            msForTimer = 60000*minutesToTime;
+
+        while (minutesToTime > 1 ) {
+                  minutesToTime = minutesToTime - 1;
+                  msRemaining = msForTimer -((minutesToTime)*60000)
+
+           if ( minutesToTime === 5 ) {
+                     setTimeout(function(){ msg.reply('5 minutes remaining on timer')}, (msRemaining));
+                  }
+                  if ( minutesToTime === 10) {
+                     setTimeout(function(){ msg.reply('10 minutes remaining on timer')}, (msRemaining));
+                  }
+                  if ( minutesToTime === 15) {
+                     setTimeout(function(){ msg.reply('1 minutes remaining on timer')}, (msRemaining));
+                  }
+                  if ( minutesToTime === 20) {
+                     setTimeout(function(){ msg.reply('20 minutes remaining on timer')}, (msRemaining));
+                  }
+                  if ( minutesToTime === 30) {
+                     setTimeout(function(){ msg.reply('30 minutes remaining on timer')}, (msRemaining));
+                  }
+                  if ( minutesToTime === 45) {
+                     setTimeout(function(){ msg.reply('45 minutes remaining on timer')}, (msRemaining));
+                  }
+                  if ( minutesToTime === 60) {
+                     setTimeout(function(){ msg.reply('60 minutes remaining on timer')}, (msRemaining));
+                  }
+                   }
+
+                    //message displays after timer finished
+                    setTimeout(function(){
+                    msg.reply('**Timer ended**')}, (msForTimer));
+
+                    }
 
 });
 
