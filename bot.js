@@ -31,7 +31,7 @@ client.on('message', msg => {
 
         function delayText(milliseconds){
         }
-            if (msg.content.startsWith('${prefix} TIMER')){
+            if (msg.content.startsWith('${prefix} timer')){
                 let minutesToTime = '';
                 // to split the input and get the varible to use in calculations
                 let timerParts = message.content.split(' ',3)
@@ -42,21 +42,14 @@ client.on('message', msg => {
                 //This converts overall timer time to milliseconds
                 msForTimer = 60000*minutesToTime;
 
-                while (minutesToTime > 9 ) { //change so timer countdown every 5 mins
-                  minsRemaining = (minutesToTime - 5)
-                  msRemaining = (minutesToTime - 5)*60000
-                  setTimeout(function(){
-                    msg.reply(minsRemaining)}, (msRemaining));//can not get minsRemaining to display anything but 1
-                    minutesToTime = minutesToTime - 5;
-                  }
-
-          while (minutesToTime > 1 && minutesToTime <5) {
-                      minsRemaining = (minutesToTime - 1)
-                      msRemaining = (minutesToTime - 1)*60000
-                      setTimeout(function(){
-                      msg.reply(minsRemaining)}, (msRemaining));//can not get minsRemaining to display anything but 1
-                      minutesToTime = minutesToTime - 1;
-              }
+                while (minutesToTime > 1 ) {
+                          minutesToTime = minutesToTime - 1;
+                          if ( minutesToTime % 5 === 0) {
+                              msRemaining = msForTimer -((minutesToTime)*60000)
+                              setTimeout(function(){
+                          msg.reply((minutesToTime) +' minutes remaining on timer')}, (msRemaining));//number not working
+                          }
+                              }
 
               if  (minutesToTime === 1 )
                   minutesToTime = minutesToTime - 1;
@@ -67,6 +60,37 @@ client.on('message', msg => {
                   msg.reply('**Timer ended**')}, (msForTimer));
 
                 }
+
+                // need to make repeat 4 times
+                if (msg.content.startsWith('${prefix} POM')){
+                    // to split the input and get the varible to use in calculations
+                    let pomMinutes = '';
+                    let pomParts = msg.content.split(' ',4)
+                    pomMinutesStudy = pomParts[2]
+                    pomMinutesBreak = pomParts [3]
+                    msg.reply('Pomodoro set for  ' + (pomMinutesStudy) +' minutes of study and ' +(pomMinutesBreak) +' minutes break' );
+
+                    msForPomStudy = 60000*pomMinutesStudy;
+                    msForPomBreak = 60000*pomMinutesBreak;
+                      while (pomMinutesStudy > 1 ) {
+                            pomMinutesStudy = pomMinutesStudy - 1;
+                                if ( pomMinutesStudy % 5 === 0) {
+                                    msPomRemaining = msForPomStudy -((pomMinutesStudy)*60000)
+                                    setTimeout(function(){
+                                msg.reply((pomMinutesStudy) +' minutes of study remaining')}, (msPomRemaining));//can not get minsRemaining to display anything but 1
+                                }
+                                    }
+
+                        if  (pomMinutesStudy === 1 ) {
+                            pomMinutesStudy = pomMinutesStudy - 1;
+                        }
+
+                        if (pomMinutesStudy === 0 )
+                            setTimeout(function(){
+                            msg.reply('**Time for a break**')}, (msForPomStudy));
+                            setInterval(function(){ msg.reply("Break time over in 1 minute")}, (msForPomBreak+msForPomStudy - 60000));
+                            setInterval(function(){ msg.reply("Break time over")}, (msForPomBreak+msForPomStudy));
+                        }
 
 });
 
