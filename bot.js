@@ -26,11 +26,10 @@ client.on('message', msg => {
       msg.channel.send(answer);
     }
     
-    let date = '';
+let date = '';
 let time = '';
 let details = '';
 
-bot.on('message', msg=>{
 function checkTime(){
 let d = new Date();
 let lDate = d.toLocaleDateString();
