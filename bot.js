@@ -22,6 +22,40 @@ client.on('message', msg => {
     msg.channel.send('Online! :robot:');
   }
 
+// ###################### Working on this ############################################################
+
+  if (msg.content.startsWith(`${prefix}help`)) {
+
+  // inside a command, event listener, etc.
+  const exampleEmbed = new Discord.MessageEmbed()
+    .setColor('#0099ff')
+    .setTitle('Some title')
+    .setURL('https://discord.js.org/')
+    .setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+    .setDescription('Some description here')
+    .setThumbnail('https://i.imgur.com/wSTFkRM.png')
+    .addFields(
+      { name: 'Regular field title', value: 'Some value here' },
+      { name: '\u200B', value: '\u200B' },
+      { name: 'Inline field title', value: 'Some value here', inline: true },
+      { name: 'Inline field title', value: 'Some value here', inline: true },
+    )
+    .addField('Inline field title', 'Some value here', true)
+    .setImage('https://i.imgur.com/wSTFkRM.png')
+    .setTimestamp()
+    .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+
+    msg.reply(exampleEmbed);
+
+}
+
+
+// ######################################################################################################
+
+
+
+
+
 // The command 'nm calc' followed by a calculation returns an answer
 // to the user.
   if (msg.content.startsWith(`${prefix}calc`)) {
