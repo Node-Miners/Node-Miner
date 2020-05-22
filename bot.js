@@ -29,21 +29,35 @@ client.on('message', msg => {
   // inside a command, event listener, etc.
   const exampleEmbed = new Discord.MessageEmbed()
     .setColor('#0099ff')
-    .setTitle('Some title')
-    .setURL('https://discord.js.org/')
-    .setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+    .setTitle('NodeMiner Help Screen')
+    .setURL('')
+    .setAuthor('NodeMiner', 'https://i.ibb.co/CbNQyHv/NM-logo-3.jpg', '')
     .setDescription('Some description here')
-    .setThumbnail('https://i.imgur.com/wSTFkRM.png')
+    .setThumbnail('https://i.ibb.co/CbNQyHv/NM-logo-3.jpg')
     .addFields(
-      { name: 'Regular field title', value: 'Some value here' },
-      { name: '\u200B', value: '\u200B' },
-      { name: 'Inline field title', value: 'Some value here', inline: true },
-      { name: 'Inline field title', value: 'Some value here', inline: true },
+      { name: '`nm calc`', value: 'followed by a calculation returns an answer to the user e.g. `nm calc 5+5`' },
     )
-    .addField('Inline field title', 'Some value here', true)
-    .setImage('https://i.imgur.com/wSTFkRM.png')
+    .addFields(
+      { name: '`nm timer`', value: 'followed by a number of minutes you wish to set the timer e.g. `nm timer 5` will set the timer for 5 minutes' },
+      // { name: '\u200B', value: '\u200B' },
+    )
+    .addFields(
+      { name: '`nm poma`', value: 'followed by the study time and brake time e.g. `nm poma 25 5` this will set a 25 minute study time and 5 minutes break time' },
+      //  { name: '\u200B', value: '\u200B' },
+      // { name: 'Inline field title', value: 'Some value here', inline: true },
+      // { name: 'Inline field title', value: 'Some value here', inline: true },
+    )
+     .addFields(
+       { name: '`nm web-search`', value: 'followed by a key word returns an answer to the user e.g. `nm web-search Soccer`' },
+    //    { name: '\u200B', value: '\u200B' },
+    //    { name: 'Inline field title', value: 'Some value here', inline: true },
+    //    { name: 'Inline field title', value: 'Some value here', inline: true },
+     )
+
+    // .addField('Inline field title', 'Some value here', true)
+    //  .setImage('https://i.ibb.co/T4ptGgR/NM-logo-3.jpg')
     .setTimestamp()
-    .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+    .setFooter('Some footer text here', 'https://i.ibb.co/CbNQyHv/NM-logo-3.jpg');
 
     msg.reply(exampleEmbed);
 
