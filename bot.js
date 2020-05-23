@@ -45,7 +45,7 @@ client.on('message', msg => {
        { name: '`nm search` **Or** `nm wiki`', value: 'followed by your search will return answers back to the user e.g. `nm search sport` or ` nm wiki nodejs`' },
      )
     .setTimestamp()
-    .setFooter('Some footer text here', 'https://i.ibb.co/CbNQyHv/NM-logo-3.jpg');
+    .setFooter('NodeMiner the productivity Discord Bot for you', 'https://i.ibb.co/CbNQyHv/NM-logo-3.jpg');
 
     msg.reply(helpEmbed);
 
