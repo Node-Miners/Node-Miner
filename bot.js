@@ -50,8 +50,12 @@ client.on('message', msg => {
       // prints some info about the request to the API
       console.log(data.request)
 
-      for (i = 0; i < 5; i++) {
-        output += (i + 1) + ". " + data.organic_results[i].title + "\n" + data.organic_results[i].url + "\n\n"
+      if (data.request.success) {
+        for (i = 0; i < 5; i++) {
+          output += (i + 1) + ". " + data.organic_results[i].title + "\n" + data.organic_results[i].url + "\n\n"
+        }
+      } else {
+        output = '>>> Search API error!'
       }
 
       msg.channel.send(output)
@@ -74,13 +78,18 @@ client.on('message', msg => {
       // prints some info about the request to the API
       console.log(data.request)
 
-      for (i = 0; i < 5; i++) {
-        if (data.organic_results[i].url.includes('wikipedia.org')) {
-          output = '>>> ' + data.organic_results[i].title + '\n' + data.organic_results[i].url
-          break
-        } else {
-          output = 'Could not find relevant article'
+      if (data.request.success) {
+        for (i = 0; i < 5; i++) {
+          if (data.organic_results[i].url.includes('wikipedia.org')) {
+            output = '>>> ' + data.organic_results[i].title + '\n' + data.organic_results[i].url
+            break
+          } else {
+            output = 'Could not find relevant article'
+          }
         }
+      } else {
+        console.log("Api Error!")
+        output = '>>> Search API error!'
       }
 
       msg.channel.send(output)
