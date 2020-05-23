@@ -41,16 +41,20 @@ client.on('message', msg => {
     let query = msg.content.slice(10, msg.content.length)
     console.log('Search query: ' + query) // The query is logged for troubleshooting purposes
 
+    // This url fetches search data in JSON format.
     let url = `http://api.serpstack.com/search?access_key=${process.env.SERP_API_KEY}&type=web&query=${query}`
     console.log(url)
 
     let output = ">>> Here are your results:\n\n"
 
+    // This jQuery method gets the json data from the URL
     $.get(url, function (data) {
 
       // prints some info about the request to the API
       console.log(data.request)
 
+      // This if/else statement adds search results to the string if the API request is successful, 
+      // or modifies the string to an error message if unsuccessful.
       if (data.request.success) {
         for (i = 0; i < 5; i++) {
           output += (i + 1) + ". " + data.organic_results[i].title + "\n" + data.organic_results[i].url + "\n\n"
@@ -59,6 +63,7 @@ client.on('message', msg => {
         output = '>>> Search API error!'
       }
 
+      // The output string is send to the discord channel
       msg.channel.send(output)
 
     })
