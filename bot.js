@@ -30,7 +30,7 @@ client.on('message', msg => {
     .setTitle('NodeMiner Help Screen')
     .setURL('')
     .setAuthor('NodeMiner', 'https://i.ibb.co/CbNQyHv/NM-logo-3.jpg', '')
-    .setDescription('Some description here')
+    .setDescription('**NodeMiner** is a Newly created and up and comming Productivity Discord Bot')
     .setThumbnail('https://i.ibb.co/CbNQyHv/NM-logo-3.jpg')
     .addFields(
       { name: '`nm calc`', value: 'followed by a calculation returns an answer to the user e.g. `nm calc 5+5`' },
