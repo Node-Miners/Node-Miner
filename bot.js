@@ -57,8 +57,7 @@ client.on('message', msg => {
       // or modifies the string to an error message if unsuccessful.
       if (data.request.success) {
         for (i = 0; i < 5; i++) {
-          // '<> characters are used to prevents discord's automatic link embedding
-          output += (i + 1) + ". " + data.organic_results[i].title + "\n<" + data.organic_results[i].url + ">\n\n"
+          output += (i + 1) + ". " + data.organic_results[i].title + "\n" + data.organic_results[i].url + "\n\n"
         }
       } else {
         output = '>>> Search API error!'
@@ -89,7 +88,7 @@ client.on('message', msg => {
       if (data.request.success) {
         for (i = 0; i < 5; i++) {
           if (data.organic_results[i].url.includes('wikipedia.org')) {
-            output = '>>> ' + data.organic_results[i].title + '\n<' + data.organic_results[i].url + '>'
+            output = '>>> ' + data.organic_results[i].title + '\n' + data.organic_results[i].url
             break
           } else {
             output = 'Could not find relevant article'
