@@ -117,7 +117,7 @@ client.on('message', msg => {
         setTimeout(function () { msg.reply('10 minutes remaining on timer') }, (msRemaining));
       }
       if (minutesToTime === 15) {
-        setTimeout(function () { msg.reply('1 minutes remaining on timer') }, (msRemaining));
+        setTimeout(function () { msg.reply('15 minutes remaining on timer') }, (msRemaining));
       }
       if (minutesToTime === 20) {
         setTimeout(function () { msg.reply('20 minutes remaining on timer') }, (msRemaining));
