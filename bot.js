@@ -39,13 +39,13 @@ client.on('message', msg => {
       { name: '`nm timer`', value: 'followed by a number of minutes you wish to set the timer \n e.g. `nm timer 5` will set the timer for 5 minutes' },
     )
     .addFields(
-      { name: '`nm poma`', value: 'followed by the study time and brake time \n e.g. `nm poma 25 5` this will set a 25 minute study time and 5 minutes break time' },
+      { name: '`nm poma`', value: 'followed by the study time and break time \n e.g. `nm poma 25 5` this will set a 25 minute study time and 5 minutes break time' },
     )
      .addFields(
        { name: '`nm search` **Or** `nm wiki`', value: 'followed by your search will return answers back to the user \n e.g. `nm search sport` or ` nm wiki nodejs`' },
      )
      .addFields(
-      { name: '`nm reminder`', value: 'followed by your reminder  will return answers back to the user e.g. `nm reminder,dd/mm/yyyy,hh:mm:ss AM/PM,details` \n **Note:** Date format is specific where Bot is run from' },
+      { name: '`nm reminder`', value: 'followed by your reminder  will return answers back to the user e.g. `nm reminder,dd/mm/yyyy,hh:mm:ss AM/PM,details` \n **Note:** Date format is specific to where Bot is run from' },
     )
     .setTimestamp()
     .setFooter('NodeMiner the productivity Discord Bot for you', 'https://i.ibb.co/CbNQyHv/NM-logo-3.jpg');
@@ -70,14 +70,6 @@ let lTime = d.toLocaleTimeString();
 if (lDate === date && lTime === time){
 msg.reply(details); }
  }
-
-
-// if (msg.content === `${prefix}reminder`){
-//   msg.reply('Please enter reminder details in the following\n' + 'format:\n'
-// + 'set reminder,dd/mm/yyyy,hh:mm:ss am/pm,details\n'
-// + 'No 0 in time for single hour time')
-// }
-
 
 if (msg.content.startsWith(`${prefix}reminder`)){
   let reminderParts = msg.content.split(',', 4);
