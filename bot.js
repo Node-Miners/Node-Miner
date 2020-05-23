@@ -65,7 +65,6 @@ client.on('message', msg => {
   // The command 'nm calc' followed by a calculation returns an answer
   // to the user.
   if (msg.content.startsWith(`${prefix}calc`)) {
-<<<<<<< HEAD
     let parts = msg.content.split(' ', 3)
     let problem = parts[2]
     let answer = eval(problem)
@@ -167,12 +166,10 @@ client.on('message', msg => {
       if (pomMinutesStudy === 45) {
         setTimeout(function () { msg.reply('45 minutes remaining till break') }, (msPomRemaining));
       }
-=======
       let parts = msg.content.split('c', 3)
       let problem = parts[2]
       let answer = eval(problem)
       msg.channel.send(answer);
->>>>>>> 592d335f18755cb8dd6cf441801ff899ced5562d
     }
 
     setTimeout(function () {
