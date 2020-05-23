@@ -48,7 +48,7 @@ client.on('message', msg => {
       // { name: 'Inline field title', value: 'Some value here', inline: true },
     )
      .addFields(
-       { name: '`nm web-search`', value: 'followed by a key word returns an answer to the user e.g. `nm web-search Soccer`' },
+       { name: '`nm search` **Or** `nm wiki`', value: 'followed by your search will return answers back to the user e.g. `nm search sport` or ` nm wiki nodejs`' },
     //    { name: '\u200B', value: '\u200B' },
     //    { name: 'Inline field title', value: 'Some value here', inline: true },
     //    { name: 'Inline field title', value: 'Some value here', inline: true },
