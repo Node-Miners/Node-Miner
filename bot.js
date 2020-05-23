@@ -22,8 +22,6 @@ client.on('message', msg => {
     msg.channel.send('Online! :robot:');
   }
 
-// ###################### Working on this ############################################################
-
   if (msg.content.startsWith(`${prefix}help`)) {
 
   // inside a command, event listener, etc.
@@ -39,36 +37,19 @@ client.on('message', msg => {
     )
     .addFields(
       { name: '`nm timer`', value: 'followed by a number of minutes you wish to set the timer e.g. `nm timer 5` will set the timer for 5 minutes' },
-      // { name: '\u200B', value: '\u200B' },
     )
     .addFields(
       { name: '`nm poma`', value: 'followed by the study time and brake time e.g. `nm poma 25 5` this will set a 25 minute study time and 5 minutes break time' },
-      //  { name: '\u200B', value: '\u200B' },
-      // { name: 'Inline field title', value: 'Some value here', inline: true },
-      // { name: 'Inline field title', value: 'Some value here', inline: true },
     )
      .addFields(
        { name: '`nm search` **Or** `nm wiki`', value: 'followed by your search will return answers back to the user e.g. `nm search sport` or ` nm wiki nodejs`' },
-    //    { name: '\u200B', value: '\u200B' },
-    //    { name: 'Inline field title', value: 'Some value here', inline: true },
-    //    { name: 'Inline field title', value: 'Some value here', inline: true },
      )
-
-    // .addField('Inline field title', 'Some value here', true)
-    //  .setImage('https://i.ibb.co/T4ptGgR/NM-logo-3.jpg')
     .setTimestamp()
     .setFooter('Some footer text here', 'https://i.ibb.co/CbNQyHv/NM-logo-3.jpg');
 
     msg.reply(helpEmbed);
 
 }
-
-
-// ######################################################################################################
-
-
-
-
 
 // The command 'nm calc' followed by a calculation returns an answer
 // to the user.
