@@ -12,6 +12,8 @@ RUN apt install nodejs -y
 
 RUN npm i discord.js
 RUN npm i dotenv-flow
+RUN npm i jquery
+RUN npm i jsdom
 
 COPY ./app ./app
 
