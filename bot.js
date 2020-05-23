@@ -27,7 +27,7 @@ client.on('message', msg => {
   if (msg.content.startsWith(`${prefix}help`)) {
 
   // inside a command, event listener, etc.
-  const exampleEmbed = new Discord.MessageEmbed()
+  const helpEmbed = new Discord.MessageEmbed()
     .setColor('#0099ff')
     .setTitle('NodeMiner Help Screen')
     .setURL('')
@@ -59,7 +59,7 @@ client.on('message', msg => {
     .setTimestamp()
     .setFooter('Some footer text here', 'https://i.ibb.co/CbNQyHv/NM-logo-3.jpg');
 
-    msg.reply(exampleEmbed);
+    msg.reply(helpEmbed);
 
 }
 
