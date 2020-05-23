@@ -57,7 +57,7 @@ client.on('message', msg => {
 // The command 'nm calc' followed by a calculation returns an answer
 // to the user.
   if (msg.content.startsWith(`${prefix}calc`)) {
-      let parts = msg.content.split(' ', 3)
+      let parts = msg.content.split('c', 3)
       let problem = parts[2]
       let answer = eval(problem)
       msg.channel.send(answer);
