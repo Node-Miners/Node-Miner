@@ -31,32 +31,38 @@ client.on('message', msg => {
   }
 
   if (msg.content.startsWith(`${prefix}help`)) {
-
+    let h = new Date();
+    let helpDate = h.toLocaleDateString();
+    let helpTime = h.toLocaleTimeString();
     // inside a command, event listener, etc.
     const helpEmbed = new Discord.MessageEmbed()
-      .setColor('#0099ff')
-      .setTitle('NodeMiner Help Screen')
-      .setURL('')
-      .setAuthor('NodeMiner', 'https://i.ibb.co/CbNQyHv/NM-logo-3.jpg', '')
-      .setDescription('**NodeMiner** is a Newly created and up and comming Productivity Discord Bot')
-      .setThumbnail('https://i.ibb.co/CbNQyHv/NM-logo-3.jpg')
-      .addFields(
-        { name: '`nm calc`', value: 'followed by a calculation returns an answer to the user \n e.g. `nm calc 5+5`' },
-      )
-      .addFields(
-        { name: '`nm timer`', value: 'followed by a number of minutes you wish to set the timer \n e.g. `nm timer 5` will set the timer for 5 minutes' },
-      )
-      .addFields(
-        { name: '`nm poma`', value: 'followed by the study time and break time \n e.g. `nm poma 25 5` this will set a 25 minute study time and 5 minutes break time' },
-      )
-      .addFields(
-        { name: '`nm search` **Or** `nm wiki`', value: 'followed by your search will return answers back to the user \n e.g. `nm search sport` or ` nm wiki nodejs`' },
-      )
-      .addFields(
-        { name: '`nm reminder`', value: 'followed by your reminder  will return answers back to the user e.g. `nm reminder,dd/mm/yyyy,hh:mm:ss AM/PM,details` \n **Note:** Date format is specific to where Bot is run from' },
-      )
-      .setTimestamp()
-      .setFooter('NodeMiner the productivity Discord Bot for you', 'https://i.ibb.co/CbNQyHv/NM-logo-3.jpg');
+    .setColor('#0099ff')
+    .setTitle('NodeMiner Help Screen')
+    .setURL('')
+    .setAuthor('NodeMiner', 'https://i.ibb.co/CbNQyHv/NM-logo-3.jpg', '')
+    .setDescription('**NodeMiner** is a newly created up and coming Productivity Discord Bot')
+    .setThumbnail('https://i.ibb.co/CbNQyHv/NM-logo-3.jpg')
+    .addFields(
+      { name: '`nm calc`', value: 'followed by a calculation returns an answer to the user \n e.g. `nm calc 5+5`' },
+    )
+    .addFields(
+      { name: '`nm timer`', value: 'followed by a number of minutes you wish to set the timer \n e.g. `nm timer 5` will set the timer for 5 minutes' },
+    )
+    .addFields(
+      { name: '`nm poma`', value: 'followed by the study time and break time \n e.g. `nm poma 25 5` this will set a 25 minute study time and 5 minutes break time' },
+    )
+    .addFields(
+      { name: '`nm search` **Or** `nm wiki`', value: 'followed by your search will return answers back to the user \n e.g. `nm search sport` **or** ` nm wiki nodejs`' },
+    )
+    .addFields(
+      { name: '`nm reminder`', value: 'followed by your reminder  will return answers back to the user e.g. `nm reminder,dd/mm/yyyy,hh:mm:ss am/pm,details` \n **Note:** Date format is specific to where Bot is run from \n `Your local format is Date: ${helpDate}`, `Time: ${helpTime}`'},
+    )
+    .addFields(
+      {name: '`nm reminder`', value: `followed by your reminder will return answers back to the user e.g.nm reminder,${helpDate},${helpTime},Time for shool`},
+    )
+  
+    .setTimestamp()
+    .setFooter('NodeMiner the Productivity Discord Bot for you', 'https://i.ibb.co/CbNQyHv/NM-logo-3.jpg');
 
     msg.reply(helpEmbed);
 
