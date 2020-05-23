@@ -22,6 +22,38 @@ client.on('message', msg => {
     msg.channel.send('Online! :robot:');
   }
 
+  if (msg.content.startsWith(`${prefix}help`)) {
+
+  // inside a command, event listener, etc.
+  const helpEmbed = new Discord.MessageEmbed()
+    .setColor('#0099ff')
+    .setTitle('NodeMiner Help Screen')
+    .setURL('')
+    .setAuthor('NodeMiner', 'https://i.ibb.co/CbNQyHv/NM-logo-3.jpg', '')
+    .setDescription('**NodeMiner** is a Newly created and up and comming Productivity Discord Bot')
+    .setThumbnail('https://i.ibb.co/CbNQyHv/NM-logo-3.jpg')
+    .addFields(
+      { name: '`nm calc`', value: 'followed by a calculation returns an answer to the user \n e.g. `nm calc 5+5`' },
+    )
+    .addFields(
+      { name: '`nm timer`', value: 'followed by a number of minutes you wish to set the timer \n e.g. `nm timer 5` will set the timer for 5 minutes' },
+    )
+    .addFields(
+      { name: '`nm poma`', value: 'followed by the study time and break time \n e.g. `nm poma 25 5` this will set a 25 minute study time and 5 minutes break time' },
+    )
+     .addFields(
+       { name: '`nm search` **Or** `nm wiki`', value: 'followed by your search will return answers back to the user \n e.g. `nm search sport` or ` nm wiki nodejs`' },
+     )
+     .addFields(
+      { name: '`nm reminder`', value: 'followed by your reminder  will return answers back to the user e.g. `nm reminder,dd/mm/yyyy,hh:mm:ss AM/PM,details` \n **Note:** Date format is specific to where Bot is run from' },
+    )
+    .setTimestamp()
+    .setFooter('NodeMiner the productivity Discord Bot for you', 'https://i.ibb.co/CbNQyHv/NM-logo-3.jpg');
+
+    msg.reply(helpEmbed);
+
+}
+
 // The command 'nm calc' followed by a calculation returns an answer
 // to the user.
   if (msg.content.startsWith(`${prefix}calc`)) {
@@ -39,15 +71,7 @@ if (lDate === date && lTime === time){
 msg.reply(details); }
  }
 
-
-if (msg.content === `${prefix}reminder`){
-  msg.reply('Please enter reminder details in the following\n' + 'format:\n'
-+ 'set reminder,dd/mm/yyyy,hh:mm:ss am/pm,details\n'
-+ 'No 0 in time for single hour time')
-}
-
-
-if (msg.content.startsWith('set reminder')){
+if (msg.content.startsWith(`${prefix}reminder`)){
   let reminderParts = msg.content.split(',', 4);
   date = reminderParts[1];
   time = reminderParts[2];
